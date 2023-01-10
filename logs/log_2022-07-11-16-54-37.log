@@ -1,0 +1,68 @@
+[2022-07-11 16:54:38,525]^;INFO^;224^;_internal.py^;_log()^; * Running on http://127.0.0.1:5000 (Press CTRL+C to quit)
+[2022-07-11 16:54:41,829]^;INFO^;224^;_internal.py^;_log()^;127.0.0.1 - - [11/Jul/2022 16:54:41] "GET / HTTP/1.1" 200 -
+[2022-07-11 16:54:57,290]^;ERROR^;1456^;app.py^;log_exception()^;Exception on /view_experiment_hist [GET]
+Traceback (most recent call last):
+  File "/Users/abhisheknagpal/Documents/My_Projects/ml_project/housing/pipeline/pipeline.py", line 205, in get_experiments_status
+    if os.path.exists(Pipeline.experiment_file_path):
+  File "/Users/abhisheknagpal/Documents/My_Projects/ml_project/venv/lib/python3.7/genericpath.py", line 19, in exists
+    os.stat(path)
+TypeError: stat: path should be string, bytes, os.PathLike or integer, not NoneType
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/abhisheknagpal/Documents/My_Projects/ml_project/venv/lib/python3.7/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/abhisheknagpal/Documents/My_Projects/ml_project/venv/lib/python3.7/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/abhisheknagpal/Documents/My_Projects/ml_project/venv/lib/python3.7/site-packages/flask/app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/abhisheknagpal/Documents/My_Projects/ml_project/venv/lib/python3.7/site-packages/flask/app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/Users/abhisheknagpal/Documents/My_Projects/ml_project/app.py", line 80, in view_experiment_history
+    experiment_df = Pipeline.get_experiments_status()
+  File "/Users/abhisheknagpal/Documents/My_Projects/ml_project/housing/pipeline/pipeline.py", line 212, in get_experiments_status
+    raise HousingException(e, sys) from e
+housing.exception.HousingException: 
+        Error occured in script: 
+        [ /Users/abhisheknagpal/Documents/My_Projects/ml_project/housing/pipeline/pipeline.py ] at 
+        try block line number: [205] and exception block line number: [212] 
+        error message: [stat: path should be string, bytes, os.PathLike or integer, not NoneType]
+        
+[2022-07-11 16:54:57,294]^;INFO^;224^;_internal.py^;_log()^;127.0.0.1 - - [11/Jul/2022 16:54:57] "[35m[1mGET /view_experiment_hist HTTP/1.1[0m" 500 -
+[2022-07-11 16:55:01,384]^;INFO^;224^;_internal.py^;_log()^;127.0.0.1 - - [11/Jul/2022 16:55:01] "GET /predict HTTP/1.1" 200 -
+[2022-07-11 16:55:04,297]^;ERROR^;1456^;app.py^;log_exception()^;Exception on /saved_models [GET]
+Traceback (most recent call last):
+  File "/Users/abhisheknagpal/Documents/My_Projects/ml_project/venv/lib/python3.7/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/abhisheknagpal/Documents/My_Projects/ml_project/venv/lib/python3.7/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/abhisheknagpal/Documents/My_Projects/ml_project/venv/lib/python3.7/site-packages/flask/app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/abhisheknagpal/Documents/My_Projects/ml_project/venv/lib/python3.7/site-packages/flask/app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/Users/abhisheknagpal/Documents/My_Projects/ml_project/app.py", line 166, in saved_models_dir
+    return render_template('saved_models_files.html', result=result)
+  File "/Users/abhisheknagpal/Documents/My_Projects/ml_project/venv/lib/python3.7/site-packages/flask/templating.py", line 149, in render_template
+    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "/Users/abhisheknagpal/Documents/My_Projects/ml_project/venv/lib/python3.7/site-packages/jinja2/environment.py", line 1081, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/Users/abhisheknagpal/Documents/My_Projects/ml_project/venv/lib/python3.7/site-packages/jinja2/environment.py", line 1010, in get_template
+    return self._load_template(name, globals)
+  File "/Users/abhisheknagpal/Documents/My_Projects/ml_project/venv/lib/python3.7/site-packages/jinja2/environment.py", line 969, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/Users/abhisheknagpal/Documents/My_Projects/ml_project/venv/lib/python3.7/site-packages/jinja2/loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/Users/abhisheknagpal/Documents/My_Projects/ml_project/venv/lib/python3.7/site-packages/flask/templating.py", line 59, in get_source
+    return self._get_source_fast(environment, template)
+  File "/Users/abhisheknagpal/Documents/My_Projects/ml_project/venv/lib/python3.7/site-packages/flask/templating.py", line 95, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: saved_models_files.html
+[2022-07-11 16:55:04,298]^;INFO^;224^;_internal.py^;_log()^;127.0.0.1 - - [11/Jul/2022 16:55:04] "[35m[1mGET /saved_models HTTP/1.1[0m" 500 -
+[2022-07-11 16:55:06,622]^;INFO^;224^;_internal.py^;_log()^;127.0.0.1 - - [11/Jul/2022 16:55:06] "GET /artifact HTTP/1.1" 200 -
+[2022-07-11 16:55:09,141]^;INFO^;193^;app.py^;render_log_dir()^;req_path: logs
+[2022-07-11 16:55:09,147]^;INFO^;224^;_internal.py^;_log()^;127.0.0.1 - - [11/Jul/2022 16:55:09] "GET /logs HTTP/1.1" 200 -
+[2022-07-11 16:55:13,122]^;INFO^;224^;_internal.py^;_log()^;127.0.0.1 - - [11/Jul/2022 16:55:13] "GET / HTTP/1.1" 200 -
+[2022-07-11 16:55:14,970]^;INFO^;224^;_internal.py^;_log()^;127.0.0.1 - - [11/Jul/2022 16:55:14] "GET / HTTP/1.1" 200 -
+[2022-07-11 16:55:33,194]^;INFO^;193^;app.py^;render_log_dir()^;req_path: logs
+[2022-07-11 16:55:33,198]^;INFO^;224^;_internal.py^;_log()^;127.0.0.1 - - [11/Jul/2022 16:55:33] "GET /logs HTTP/1.1" 200 -

@@ -1,0 +1,2 @@
+[2022-07-11 17:08:46,398]^;INFO^;224^;_internal.py^;_log()^; * Running on http://127.0.0.1:5000 (Press CTRL+C to quit)
+[2022-07-11 17:08:51,647]^;INFO^;224^;_internal.py^;_log()^;127.0.0.1 - - [11/Jul/2022 17:08:51] "GET / HTTP/1.1" 200 -

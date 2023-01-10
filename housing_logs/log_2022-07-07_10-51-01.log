@@ -1,0 +1,10 @@
+[2022-07-07 10:51:01,713] werkzeug - WARNING -  * Debugger is active!
+[2022-07-07 10:51:01,727] werkzeug - INFO -  * Debugger PIN: 229-093-529
+[2022-07-07 10:51:36,715] root - INFO - 
+        Error occured in script: 
+        [ /Users/abhisheknagpal/Documents/My_Projects/ml_project/app.py ] at 
+        try block line number: [11] and exception block line number: [13] 
+        error message: [We are trying custom exception]
+        
+[2022-07-07 10:51:36,715] root - INFO - We are testing logging module
+[2022-07-07 10:51:36,717] werkzeug - INFO - 127.0.0.1 - - [07/Jul/2022 10:51:36] "GET / HTTP/1.1" 200 -
