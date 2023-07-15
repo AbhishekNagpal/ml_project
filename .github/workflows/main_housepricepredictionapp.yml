@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'housepricepredictionapp'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_057C6DC943824F0C9782BC13BFABD582 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_1F5616BE282B4D468CB540DE455E8E9E }}
